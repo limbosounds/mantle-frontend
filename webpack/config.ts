@@ -41,6 +41,13 @@ const sassLoader: webpack.Loader = {
 	}
 }
 
+const cssLoader: webpack.Loader = {
+	loader: "css-loader",
+	options: {
+		url: false
+	}
+}
+
 const defaultRules: webpack.RuleSetRule[] = [
 	{
 		test: /\.tsx?$/,
@@ -105,7 +112,7 @@ const devConfig: webpack.Configuration = {
 				test: /\.(sa|c)ss$/,
 				use: [
 					"style-loader",
-					"css-loader",
+					cssLoader,
 					sassLoader
 				]
 			}
